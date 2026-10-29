@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <p class="eyebrow">YOUR MONEY, YOUR STORY</p>
+    <h1>Expense & Budget Visualizer</h1>
+    <p>Track your spending, understand your habits, and stay on budget.</p>
+  </header>
+
+  <main class="dashboard">
+    <section class="balance-card">
+      <p>Total Expenses</p>
+      <h2 id="totalBalance">Rp0</h2>
+      <p class="balance-note">Your spending at a glance</p>
+    </section>
+
+    <section class="panel">
+      <h2>Add a Transaction</h2>
+      <form id="expenseForm">
+        <label for="itemName">Item Name</label>
+        <input id="itemName" type="text" placeholder="e.g. Lunch" required>
+
+        <label for="amount">Amount (Rp)</label>
+        <input id="amount" type="number" min="1" placeholder="e.g. 25000" required>
+
+        <label for="category">Category</label>
+        <select id="category" required>
+          <option value="">Choose a category</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Fun">Fun</option>
+        </select>
+
+        <button type="submit">+ Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Transaction History</h2>
+      <div id="transactionList" class="transaction-list">
+        <p class="empty-state">No transactions yet. Add your first expense!</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Spending Breakdown</h2>
+      <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+      </div>
+      <div id="chartLegend" class="chart-legend"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with care · Expense & Budget Visualizer</p>
+  </footer>
+
+ 
+  <script src="js/script.js"></script>
+</body>
+</html>
